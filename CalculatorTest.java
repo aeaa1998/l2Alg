@@ -1,49 +1,44 @@
+import org.junit.Test;
 
-/**
- * @author Augusto Alonso 181085 y David Cuellar 18382
-
- */
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CalculatorTest {
-    private Calculator calc = new Calculator();
-    @org.junit.jupiter.api.Test
-    void sumar() {
-        assertEquals(1, calc.sumar(1,0));
+public class CalculatorTest {
+
+//        @Test
+//        public void testIsInt() {
+//            Calculator calc =  new Calculator();
+//            assertTrue(calc.isInt("1"));
+//            System.out.print("Ha funcionado 1 es int");
+//        }
+//
+//    @Test
+//    public void testFailIsInt() {
+//        Calculator calc =  new Calculator();
+//        assertTrue(calc.isInt(""));
+//        System.out.print("No ha funcionado no es int");
+//    }
+//
+//        @Test
+//        public void testCalculator() {
+//            Calculator calc =  new Calculator();
+//            calc.fillStack("datos.txt");
+//            calc.doOperation();
+//            int result =calc.getResult();
+//            assertEquals(15, result);
+//            System.out.print("Resultado esperado 15 obtenido " +  result);
+//        }
+//
+//        @Test
+//        public void testFailCalculator() {
+//            Calculator calc =  new Calculator();
+//            calc.fillStack("datos.txt");
+//            calc.doOperation();
+//            int result =calc.getResult();
+//            assertEquals(12, result);
+//            System.out.print("Resultado esperado 12 obtenido " +  result);
+//        }
+
+
     }
 
-    @org.junit.jupiter.api.Test
-    void restar() {
-        assertEquals(1, calc.restar(1,0));
-    }
-
-    @org.junit.jupiter.api.Test
-    void dividir() {
-        assertEquals(1, calc.dividir(1,1));
-    }
-
-    @org.junit.jupiter.api.Test
-    void multiplicar() {
-        assertEquals(2, calc.multiplicar(1,2));
-    }
-    @org.junit.jupiter.api.Test
-    void sumarFail() {
-        assertEquals(2, calc.sumar(1,0));
-    }
-
-    @org.junit.jupiter.api.Test
-    void restarFail() {
-        assertEquals(2, calc.restar(1,0));
-    }
-
-    @org.junit.jupiter.api.Test
-    void dividirFail() {
-        assertEquals(2, calc.dividir(1,1));
-    }
-
-    @org.junit.jupiter.api.Test
-    void multiplicarFail() {
-        assertEquals(3, calc.multiplicar(1,2));
-    }
-}
