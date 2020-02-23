@@ -95,8 +95,13 @@ public class Calculator implements iCalculator {
                 int b = temporalStack.pop();
                 int a = temporalStack.pop();
                 try {
-                    int result = (Integer) engine.eval(a + " " + operator + " " + b);
-                    temporalStack.push(result);
+                	if (b == 0 && operator.equalsIgnoreCase("/")) {
+                		System.out.println("Syntax Error");
+                		broke = true;
+                	}else{
+	                    int result = (Integer) engine.eval(a + " " + operator + " " + b);
+	                    temporalStack.push(result);
+                	}
                 }
                 catch(ScriptException e){
                     System.out.println("Ha ingresado un mas operadores de los validos ");
