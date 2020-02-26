@@ -43,7 +43,11 @@ public class Calculator implements iCalculator {
         try {
             var c =Calculator.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
             c.length();
-            List<String> strings = Files.readAllLines(Path.of(Calculator.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath() + text));
+            var mainPath = Calculator.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
+            if (getOsName().startsWith("Windows")){
+                if(String.valueOf(mainPath.charAt(0)).equals("/")) { mainPath = mainPath.substring(1, mainPath.length());}
+            }
+            List<String> strings = Files.readAllLines(Path.of(mainPath + text));
             for (String line:
                     strings) {
                 values.addAll(Arrays.asList(line.split(" ")));
@@ -116,6 +120,10 @@ public class Calculator implements iCalculator {
         }
     }
 
+    private  String getOsName()
+    {
+        return System.getProperty("os.name");
+    }
 
 }
 
